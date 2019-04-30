@@ -3,6 +3,8 @@ LABEL creater="barnett"
 ENV MYSQL_VERSION=5.5.61
 ENV TZ=Asia/Shanghai
 ADD docker-entrypoint.sh /run/docker-entrypoint.sh
+ADD my.cnf /etc/mysql/percona-server.conf.d/mysqld.cnf
+ADD itsm.sql /docker-entrypoint-initdb.d/
 RUN fetchDeps=' \
 		ca-certificates \
 		wget \
