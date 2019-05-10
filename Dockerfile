@@ -11,6 +11,7 @@ COPY sources-aliyun-0.list /etc/apt/sources.list
 RUN	fetchDeps=' \
 		ca-certificates \
 		wget \
+		gosu \
 	'; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends $fetchDeps; \
