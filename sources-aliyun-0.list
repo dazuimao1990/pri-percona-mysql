@@ -1,0 +1,10 @@
+deb http://mirrors.cloud.tencent.com/debian wheezy main contrib non-free
+deb http://mirrors.cloud.tencent.com/debian wheezy-updates main contrib non-free
+#deb http://mirrors.cloud.tencent.com/debian wheezy-proposed-updates main contrib non-free
+#deb http://mirrors.cloud.tencent.com/debian wheezy-backports main contrib non-free
+#deb http://mirrors.cloud.tencent.com/debian wheezy-backports-sloppy main contrib non-free
+deb-src http://mirrors.cloud.tencent.com/debian wheezy main contrib non-free
+deb-src http://mirrors.cloud.tencent.com/debian wheezy-updates main contrib non-free
+#deb-src http://mirrors.cloud.tencent.com/debian wheezy-proposed-updates main contrib non-free
+#deb-src http://mirrors.cloud.tencent.com/debian wheezy-backports main contrib non-free
+#deb-src http://mirrors.cloud.tencent.com/debian wheezy-backports-sloppy main contrib non-free

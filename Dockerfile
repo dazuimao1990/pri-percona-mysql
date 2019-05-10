@@ -9,8 +9,10 @@ RUN fetchDeps=' \
 		ca-certificates \
 		wget \
 	'; \
-	sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list; \
-	apt-get update; \
+    rm -rf /etc/apt/sources.list /etc/apt/sources.list.d/*
+COPY sources-aliyun-0.list /etc/apt/sources.list
+
+RUN	apt-get update; \
 	apt-get install -y --no-install-recommends $fetchDeps; \
 	rm -rf /var/lib/apt/lists/*; \
     wget -O /usr/local/bin/env2file -q https://github.com/barnettZQG/env2file/releases/download/v0.1/env2file-linux; \
