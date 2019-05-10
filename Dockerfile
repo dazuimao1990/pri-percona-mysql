@@ -1,4 +1,4 @@
-FROM percona:5.6.24-stretch
+FROM percona:5.6.24
 LABEL creater="dazuimao1990"
 ENV MYSQL_VERSION=5.6.24
 ENV TZ=Asia/Shanghai
