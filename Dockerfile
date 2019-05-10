@@ -16,8 +16,7 @@ RUN	fetchDeps=' \
 	apt-get install -y --no-install-recommends $fetchDeps; \
 	rm -rf /var/lib/apt/lists/*; \
     wget -O /usr/local/bin/env2file -q https://github.com/barnettZQG/env2file/releases/download/v0.1/env2file-linux; \
-    chmod +x /run/docker-entrypoint.sh && chmod +x /usr/local/bin/env2file; \
-    apt-get purge -y --auto-remove $fetchDeps
+    chmod +x /run/docker-entrypoint.sh && chmod +x /usr/local/bin/env2file
 EXPOSE 3306
 VOLUME ["/var/lib/mysql", "/var/log/mysql"]
 # init sql scripts
