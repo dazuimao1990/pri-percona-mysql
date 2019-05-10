@@ -5,14 +5,14 @@ ENV TZ=Asia/Shanghai
 ADD docker-entrypoint.sh /run/docker-entrypoint.sh
 ADD ./run/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ADD ./run/mysqld.cnf /etc/mysql/percona-server.conf.d/mysqld.cnf
-RUN fetchDeps=' \
+RUN  rm -rf /etc/apt/sources.list /etc/apt/sources.list.d/*
+COPY sources-aliyun-0.list /etc/apt/sources.list
+
+RUN	fetchDeps=' \
 		ca-certificates \
 		wget \
 	'; \
-    rm -rf /etc/apt/sources.list /etc/apt/sources.list.d/*
-COPY sources-aliyun-0.list /etc/apt/sources.list
-
-RUN	apt-get update; \
+	apt-get update; \
 	apt-get install -y --no-install-recommends $fetchDeps; \
 	rm -rf /var/lib/apt/lists/*; \
     wget -O /usr/local/bin/env2file -q https://github.com/barnettZQG/env2file/releases/download/v0.1/env2file-linux; \
