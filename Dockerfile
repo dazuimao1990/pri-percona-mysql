@@ -3,6 +3,7 @@ LABEL creater="dazuimao1990"
 ENV MYSQL_VERSION=5.6.41
 ENV TZ=Asia/Shanghai
 ADD docker-entrypoint.sh /run/docker-entrypoint.sh
+ADD run/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN fetchDeps=' \
 		ca-certificates \
 		wget \
