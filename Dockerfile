@@ -3,7 +3,6 @@ LABEL creater="dazuimao1990"
 ENV MYSQL_VERSION=5.6.41
 ENV TZ=Asia/Shanghai
 ADD docker-entrypoint.sh /run/docker-entrypoint.sh
-ADD run/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN fetchDeps=' \
 		ca-certificates \
 		wget \
@@ -16,8 +15,7 @@ RUN fetchDeps=' \
     chmod +x /run/docker-entrypoint.sh && chmod +x /usr/local/bin/env2file; \
     apt-get purge -y --auto-remove $fetchDeps
 COPY sql/* /docker-entrypoint-initdb.d/
-RUN sed -i -e '2a set -x' \
-           -e '76a [[ $stop ]] && sleep $stop' /usr/local/bin/docker-entrypoint.sh
+RUN sed -i '2a set -x' /usr/local/bin/docker-entrypoint.sh
 EXPOSE 3306
 VOLUME ["/var/lib/mysql", "/var/log/mysql"]
 # change ENTRYPOINT exec some custom command
