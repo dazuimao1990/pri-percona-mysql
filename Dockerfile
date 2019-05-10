@@ -1,5 +1,5 @@
 FROM percona:5.7.23-stretch
-LABEL creater="barnett"
+LABEL creater="dazuimao1990"
 ENV MYSQL_VERSION=5.7.23
 ENV TZ=Asia/Shanghai
 ADD docker-entrypoint.sh /run/docker-entrypoint.sh
